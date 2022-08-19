@@ -63,11 +63,29 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "lists_created": {
+    "listsCreated": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::list.list",
       "mappedBy": "user"
+    },
+    "groupsCreated": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::group.group",
+      "mappedBy": "user"
+    },
+    "groupsMembers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::group.group",
+      "mappedBy": "members"
+    },
+    "listsEditor": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::list.list",
+      "mappedBy": "editors"
     }
   }
 }

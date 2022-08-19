@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "lists",
+  "collectionName": "groups",
   "info": {
-    "singularName": "list",
-    "pluralName": "lists",
-    "displayName": "List",
+    "singularName": "group",
+    "pluralName": "groups",
+    "displayName": "Group",
     "description": ""
   },
   "options": {
@@ -24,32 +24,23 @@
         "images"
       ]
     },
-    "createdOn": {
-      "type": "datetime",
-      "required": true
-    },
-    "listItems": {
-      "type": "component",
-      "repeatable": true,
-      "component": "lists.list-item"
-    },
-    "group": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::group.group",
-      "inversedBy": "lists"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "listsCreated"
+      "inversedBy": "groupsCreated"
     },
-    "editors": {
+    "lists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::list.list",
+      "mappedBy": "group"
+    },
+    "members": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "plugin::users-permissions.user",
-      "inversedBy": "listsEditor"
+      "inversedBy": "groupsMembers"
     }
   }
 }
