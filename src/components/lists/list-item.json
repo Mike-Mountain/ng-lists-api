@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_lists_list_items",
+  "info": {
+    "displayName": "List Item",
+    "icon": "ad",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "isComplete": {
+      "type": "boolean"
+    }
+  }
+}
